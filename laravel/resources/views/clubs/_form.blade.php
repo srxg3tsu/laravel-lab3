@@ -50,7 +50,7 @@
               rows="3"
               required
               minlength="10"
-              placeholder="Краткая информация о клубе (отображаетс�� в карточке)">{{ old('short_description', $club->short_description ?? '') }}</textarea>
+              placeholder="Краткая информация о клубе (отображается в карточке)">{{ old('short_description', $club->short_description ?? '') }}</textarea>
     @error('short_description')
         <div class="invalid-feedback">{{ $message }}</div>
     @enderror
@@ -81,7 +81,7 @@
                name="stadium" 
                value="{{ old('stadium', $club->stadium ?? '') }}"
                maxlength="255"
-               placeholder="Например: Сантьяго Бернабеу (81 044)">
+               placeholder="Например: Сантьяго Бернабеу">
         @error('stadium')
             <div class="invalid-feedback">{{ $message }}</div>
         @enderror

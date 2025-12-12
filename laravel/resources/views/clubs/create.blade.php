@@ -11,7 +11,9 @@
             <li class="breadcrumb-item">
                 <a href="{{ route('clubs.index') }}"><i class="fas fa-home"></i> Каталог</a>
             </li>
-            <li class="breadcrumb-item active" aria-current="page">Добавить клуб</li>
+            <li class="breadcrumb-item active" aria-current="page">
+                <img src="" alt=""> Добавить клуб
+            </li>
         </ol>
     </nav>
 
