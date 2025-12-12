@@ -114,9 +114,10 @@ class Club extends Model
      */
     public function setNameAttribute($value): void
     {
+        #работает как с русскими буквами, так и латиницей
         $value = trim($value);
         $this->attributes['name'] = mb_convert_case(mb_strtolower($value), MB_CASE_TITLE, 'UTF-8');
-        
+
     }
 
     /**
