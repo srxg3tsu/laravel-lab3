@@ -1,18 +1,27 @@
 <?php
+// routes/web.php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ClubController;
 
 /*
 |--------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
 */
 
+// Редирект с главной на список клубов
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('clubs.index');
 });
+
+// Ресурсные маршруты для клубов
+// Создаёт все CRUD маршруты автоматически:
+// GET     /clubs          -> index   (список)
+// GET     /clubs/create   -> create  (форма создания)
+// POST    /clubs          -> store   (сохранение)
+// GET     /clubs/{club}   -> show    (детальная страница)
+// GET     /clubs/{club}/edit -> edit (форма редактирования)
+// PUT     /clubs/{club}   -> update  (обновление)
+// DELETE  /clubs/{club}   -> destroy (удаление)
+Route::resource('clubs', ClubController::class);
